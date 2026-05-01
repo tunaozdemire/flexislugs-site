@@ -1,1 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexiSlugs | Market Advantage for 3D Print Sellers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --text: #f0f0f0;
+            --muted: #888888;
+            --accent: #f0a500;
+            --danger: #cc3300;
+            --card-bg: #111111;
+            --card-border: #222222;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .btn-amber {
+            background-color: var(--accent);
+            color: #000;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+        }
+
+        .micro-copy {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 12px;
+            display: block;
+        }
+
+        /* SECTION 1: HERO */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 96px);
+            line-height: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: var(--muted);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .hero-image-placeholder {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 400px;
+            height: 500px;
+            background-color: #111;
+            border: 1px solid #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            z-index: 1;
+        }
+
+        /* SECTION 2: TIER SELECTION */
+        .tiers {
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .tiers h2 {
+            font-size: 48px;
+            margin-bottom: 60px;
+        }
+
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            align-items: center;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 48px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+        }
+
+        .card-advantage {
+            border-color: var(--accent);
+            padding: 64px 32px;
+            z-index: 2;
+        }
+
+        .badge {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg);
+            padding: 0 8px;
+        }
+
+        .badge-amber { color: var(--accent); }
+        .badge-red { color: var(--danger); }
+
+        .tier-name {
+            font-size: 24px;
+            color: var(--muted);
+        }
+
+        .tier-price {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            margin: 8px 0;
+        }
+
+        .tier-copy {
+            font-size: 14px;
+            margin-bottom: 24px;
+            min-height: 42px;
+        }
+
+        /* SECTION 3: SOCIAL PROOF */
+        .social-proof {
+            padding: 120px 0;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+        }
+
+        .stat-item .number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 80px;
+            line-height: 1;
+            color: var(--text);
+        }
+
+        .stat-item .label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--muted);
+            margin-top: 8px;
+        }
+
+        /* SECTION 4: FINAL CTA */
+        .final-cta {
+            padding: 160px 0;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+
+        .final-cta p {
+            font-size: 20px;
+            margin-bottom: 48px;
+            color: var(--muted);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid #222;
+            text-align: center;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .footer-links {
+            margin-bottom: 24px;
+        }
+
+        .footer-links a {
+            margin: 0 8px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            opacity: 0.5;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 968px) {
+            .hero-image-placeholder {
+                display: none;
+            }
+            .tier-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            .card-advantage {
+                padding: 48px 32px;
+            }
+            .stat-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>THE MARKET MOVES FAST. YOUR LISTING NEEDS TO MOVE FASTER.</h1>
+                <p>FlexiSlugs members get new models before public release. First to list wins the sale.</p>
+                <a href="https://www.patreon.com/flexislugs" target="_blank" class="btn btn-amber">GET EARLY ACCESS →</a>
+                <span class="micro-copy">From $10/mo · Cancel anytime · Access starts immediately</span>
+            </div>
+        </div>
+        <div class="hero-image-placeholder">MODEL IMAGE</div>
+    </section>
+
+    <section class="tiers">
+        <div class="container">
+            <h2>CHOOSE YOUR MARKET POSITION</h2>
+            <div class="tier-grid">
+                <div class="card">
+                    <span class="tier-name">START</span>
+                    <span class="tier-price">$10/MO</span>
+                    <p class="tier-copy">Sell legally. Anywhere.</p>
+                    <a href="https://www.patreon.com/flexislugs" target="_blank" class="btn btn-ghost">Join →</a>
+                </div>
+
+                <div class="card card-advantage">
+                    <span class="badge badge-amber">BEST VALUE</span>
+                    <span class="tier-name">ADVANTAGE</span>
+                    <span class="tier-price">$15/MO</span>
+                    <p class="tier-copy">List 7–14 days before the market.</p>
+                    <a href="https://www.patreon.com/flexislugs" target="_blank" class="btn btn-amber">Join →</a>
+                </div>
+
+                <div class="card">
+                    <span class="badge badge-red">2 SLOTS REMAINING</span>
+                    <span class="tier-name">ELITE</span>
+                    <span class="tier-price">$50/MO</span>
+                    <p class="tier-copy">30 days early. 10 members max.</p>
+                    <a href="https://www.patreon.com/flexislugs" target="_blank" class="btn btn-ghost">Join →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="social-proof">
+        <div class="container">
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <div class="number">46K</div>
+                    <div class="label">Followers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">262K</div>
+                    <div class="label">Views</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">3</div>
+                    <div class="label">Continents</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>STILL READING?</h2>
+            <p>Your competitor already joined.</p>
+            <a href="https://www.patreon.com/flexislugs" target="_blank" class="btn btn-amber">GET EARLY ACCESS →</a>
+            <span class="micro-copy">Cancel anytime · No commitment</span>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                Free models available on: 
+                <a href="#">Makerworld</a> · 
+                <a href="#">Cults3D</a> · 
+                <a href="#">Thangs</a> · 
+                <a href="#">MyMiniFactory</a> · 
+                <a href="#">Creality Cloud</a>
+            </div>
+            <div class="copyright">© 2026 FlexiSlugs</div>
+        </div>
+    </footer>
+
+</body>
+</html>
